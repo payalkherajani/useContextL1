@@ -1,13 +1,24 @@
 import React from 'react';
 import useCart from '../customHook/useCart';
 
-
-const Cart = () => {
-    const { cartItems, setCartItems } = useCart();
+const Cart = (props) => {
+    const { cartItems } = useCart();
+    const { back } = props;
 
     return (
         <div>
-            Items in Cart!{cartItems}
+            <button onClick={() => back(0)}>Back To Product Listing</button>
+            <h1> Items in Cart!{cartItems.length}</h1>
+            <ul>
+                {
+                    cartItems.map((item) => (
+                        <div key={Math.random()}>
+                            <li>{item.name}</li>
+                            <li>{item.price}</li>
+                        </div>
+                    ))
+                }
+            </ul>
         </div>
     )
 }
