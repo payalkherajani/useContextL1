@@ -1,10 +1,8 @@
-import React, { useState, useContext } from 'react';
-import { CartContext } from '../context/CartContext';
+import React, { useState } from 'react';
 
 const ProductListing = () => {
 
-    const { id, user } = useContext(CartContext);
-    console.log(id, user);
+
 
     const [products, setProducts] = useState([
         { id: 1, name: 'Bag' },

@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import useCart from '../customHook/useCart';
+
 
 const Cart = () => {
+    const { cartItems, setCartItems } = useCart();
+
     return (
         <div>
-            Items in Cart!
+            Items in Cart!{cartItems}
         </div>
     )
 }
